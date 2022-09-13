@@ -1,0 +1,166 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;450;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  font-family: Inter, sans-serif;
+  background-color: white;
+  color: $text-color;
+  font-weight: 450;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+h1 {
+  margin-bottom: $base-mb;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+h2 {
+  margin-bottom: 1.35rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+
+  a.link {
+    display: inline !important;
+    color: $text-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+h3,
+p {
+  font-size: 1rem;
+}
+
+p {
+  line-height: 1.5rem;
+
+  a {
+    color: blue;
+    text-decoration: underline;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  h3 {
+    color: $text-color;
+  }
+
+  small {
+    color: $grey-color;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+}
+
+header,
+section {
+  margin: 0 auto;
+}
+
+header {
+  max-width: 42rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  p:first-of-type {
+    margin-bottom: 0.5rem;
+  }
+}
+
+section {
+  max-width: 64rem;
+}
+
+.no-mw {
+  max-width: unset;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
+.works {
+  margin-bottom: 6rem;
+  @include grid(2);
+  gap: 4rem;
+
+  & > div {
+    padding: 2rem;
+
+    a,
+    div.info {
+      display: block;
+      margin-bottom: $base-mb;
+    }
+
+    div.info {
+      h3 {
+        font-weight: 450;
+      }
+    }
+  }
+
+  .dotted {
+    border: 1px dashed $text-color;
+    border-radius: 0.75rem;
+  }
+}
+
+.activity {
+  margin-bottom: 6rem;
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  gap: 4rem;
+}
+
+@include mobile {
+  header {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .works {
+    margin-bottom: 0;
+    @include grid(1);
+    gap: 0;
+  }
+
+  .activity {
+    @include grid(1);
+    gap: 2rem;
+  }
+}
