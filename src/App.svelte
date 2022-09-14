@@ -148,12 +148,6 @@
       padding-bottom: 3rem;
     }
 
-    .works {
-      margin-bottom: 0;
-      @include grid(1);
-      gap: 0;
-    }
-
     .activity {
       @include grid(1);
       gap: 2rem;

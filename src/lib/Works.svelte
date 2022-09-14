@@ -110,4 +110,12 @@
       border-radius: 0.75rem;
     }
   }
+
+  @include mobile {
+    .works {
+      margin-bottom: 0;
+      @include grid(1);
+      gap: 0;
+    }
+  }
 </style>
