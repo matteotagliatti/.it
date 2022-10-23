@@ -2,14 +2,14 @@
   export let title;
   export let link;
   export let img;
-  export let text;
+  export let artist;
 </script>
 
 <a href={link} class="element" target="_blank">
   <img src={img} alt={title} />
   <div class="name-info">
     <h3>{title}</h3>
-    <p class="info">{text}</p>
+    <p class="info">{artist}</p>
   </div>
 </a>
 

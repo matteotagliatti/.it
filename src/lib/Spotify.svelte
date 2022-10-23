@@ -41,7 +41,7 @@
     spotify = songs.map((song) => {
       return {
         title: song.name,
-        text: song.artists[0].name,
+        artist: song.artists[0].name,
         img: song.album.images[1].url,
         link: song.external_urls.spotify,
       };
@@ -56,8 +56,8 @@
     <div class="container">
       <h2>Music</h2>
       <div class="grid">
-        {#each spotify as playlist}
-          <SpotifyElement {...playlist} />
+        {#each spotify as song}
+          <SpotifyElement {...song} />
         {/each}
       </div>
     </div>
