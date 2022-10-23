@@ -1,43 +1,68 @@
 <script>
   import SpotifyElement from "./SpotifyElement.svelte";
-  const spotify = [
-    {
-      title: "On repeat",
-      text: "Songs on repeat",
-      link: "https://open.spotify.com/playlist/37i9dQZF1EpvetUckj3tCR?si=a301af74651841ff",
-      img: "https://daily-mix.scdn.co/covers/on_repeat/PZN_On_Repeat2_LARGE-it.jpg",
-    },
-    {
-      title: "Dance",
-      text: "Dance stuff I like",
-      link: "https://open.spotify.com/playlist/5sJKFpmtThNDwxUPQfgMbY?si=b7b2d14c5b074f90",
-      img: "https://mosaic.scdn.co/300/ab67616d0000b273210e19d835bb0af6620256cfab67616d0000b2736005923c24a82bdd11ed8344ab67616d0000b273633c6eebb369c82c73c101b9ab67616d0000b27374b0013d9cefeb665d6e65e7",
-    },
-    {
-      title: "raphaf",
-      text: "Rap I love",
-      link: "https://open.spotify.com/playlist/53VdDxIChQmnFy3oImPfb4?si=fe9c1fa13497465c",
-      img: "https://mosaic.scdn.co/640/ab67616d0000b27326279b9515b543980f285a64ab67616d0000b273a29bd588f4caf84bd4cd6f8bab67616d0000b273b4b2f31921c8665026be4fd4ab67616d0000b273f833fe7b50fa9b2d9427e2c0",
-    },
-    {
-      title: "Workout",
-      text: "Workout playlist",
-      link: "https://open.spotify.com/playlist/2YvLAkZodn3sKsp3k3v1lP?si=374fd00c8068433d",
-      img: "https://mosaic.scdn.co/300/ab67616d0000b2731f542026a0d2d0a2d3e5b2eeab67616d0000b2739395c17791d868238377273aab67616d0000b273e27dfef438562f2ecb98a642ab67616d0000b273e88a1b90870837f8f376457a",
-    },
-  ];
+
+  import { onMount } from "svelte";
+  import axios from "axios";
+
+  const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
+  const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+  const refresh_token = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
+  const redirect_uri = "http://localhost:5173/";
+  const token_endpoint = `https://accounts.spotify.com/api/token`;
+  const top_tracks_endpoint = `https://api.spotify.com/v1/me/top/tracks`;
+
+  let songs;
+  let spotify;
+
+  onMount(async () => {
+    const access_token = await axios.post(
+      token_endpoint,
+      {
+        grant_type: "refresh_token",
+        refresh_token,
+        redirect_uri,
+        client_id,
+        client_secret,
+      },
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      }
+    );
+    const data = await axios.get(top_tracks_endpoint, {
+      headers: {
+        Authorization: `Bearer ${access_token.data.access_token}`,
+      },
+    });
+    songs = data.data.items;
+    // add songs.name, songs.artists.name, songs.album.images[0].url to spotify for 12 songs
+    spotify = songs.map((song) => {
+      return {
+        title: song.name,
+        text: song.artists[0].name,
+        img: song.album.images[1].url,
+        link: song.external_urls.href,
+      };
+    });
+    // only 12 items in spotify
+    spotify = spotify.splice(0, 12);
+    console.log(spotify);
+  });
 </script>
 
-<div class="spotify">
-  <div class="container">
-    <h2>Music</h2>
-    <div class="grid">
-      {#each spotify as playlist}
-        <SpotifyElement {...playlist} />
-      {/each}
+{#if spotify}
+  <div class="spotify">
+    <div class="container">
+      <h2>Music</h2>
+      <div class="grid">
+        {#each spotify as playlist}
+          <SpotifyElement {...playlist} />
+        {/each}
+      </div>
     </div>
   </div>
-</div>
+{/if}
 
 <style lang="scss">
   .spotify {
