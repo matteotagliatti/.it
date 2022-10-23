@@ -1,5 +1,6 @@
 <script>
   import SpotifyElement from "./SpotifyElement.svelte";
+  import Loader from "./Loader.svelte";
 
   import { onMount } from "svelte";
   import axios from "axios";
@@ -51,8 +52,8 @@
   });
 </script>
 
-{#if spotify}
-  <div class="spotify">
+<div class="spotify">
+  {#if spotify}
     <div class="container">
       <h2>Music</h2>
       <div class="grid">
@@ -61,8 +62,10 @@
         {/each}
       </div>
     </div>
-  </div>
-{/if}
+  {:else}
+    <Loader />
+  {/if}
+</div>
 
 <style lang="scss">
   .spotify {
