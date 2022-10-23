@@ -43,12 +43,11 @@
         title: song.name,
         text: song.artists[0].name,
         img: song.album.images[1].url,
-        link: song.external_urls.href,
+        link: song.external_urls.spotify,
       };
     });
     // only 12 items in spotify
     spotify = spotify.splice(0, 12);
-    console.log(spotify);
   });
 </script>
 
