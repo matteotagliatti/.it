@@ -68,7 +68,7 @@
 
 <style lang="scss">
   .spotify {
-    background-color: #f8f9fa;
+    background-color: var(--spotify-bg);
     padding: 3rem 2rem;
     margin-bottom: 6rem;
 

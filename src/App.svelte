@@ -5,6 +5,12 @@
   import Books from "./lib/Books.svelte";
   import Movies from "./lib/Movies.svelte";
   import Links from "./lib/Links.svelte";
+
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
 </script>
 
 <main>
@@ -30,10 +36,24 @@
     padding: 0;
   }
 
-  #app {
+  html[data-theme="light"] {
+    --text-color: #{$black};
+    --background-color: #{$white};
+    --grey-color: #{$grey};
+    --spotify-bg: #{$spotify-bg-white};
+  }
+
+  html[data-theme="dark"] {
+    --text-color: #{$white};
+    --background-color: #{$black};
+    --grey-color: #{$grey-black};
+    --spotify-bg: #{$spotify-bg-dark};
+  }
+
+  body {
     font-family: Inter, sans-serif;
-    background-color: white;
-    color: $text-color;
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-weight: 450;
   }
 
@@ -56,7 +76,7 @@
 
     a.link {
       display: inline !important;
-      color: $text-color;
+      color: var(--grey-color);
       &:hover {
         text-decoration: underline;
       }
@@ -81,11 +101,11 @@
     text-decoration: none;
 
     h3 {
-      color: $text-color;
+      color: var(--text-color);
     }
 
     small {
-      color: $grey-color;
+      color: var(--text-color);
     }
 
     &:hover {

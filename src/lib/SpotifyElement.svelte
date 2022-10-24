@@ -38,7 +38,7 @@
       .info {
         font-size: 0.75rem;
         line-height: 1rem;
-        color: $text-color;
+        color: var(--text-color);
         @include box(1);
       }
     }

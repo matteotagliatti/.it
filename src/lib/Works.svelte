@@ -106,7 +106,7 @@
     }
 
     .dotted {
-      border: 1px dashed $text-color;
+      border: 1px dashed var(--text-color);
       border-radius: 0.75rem;
     }
   }
