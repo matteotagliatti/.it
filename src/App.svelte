@@ -105,7 +105,7 @@
     }
 
     small {
-      color: var(--text-color);
+      color: var(--grey-color);
     }
 
     &:hover {
