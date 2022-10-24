@@ -92,8 +92,12 @@
     line-height: 1.5rem;
 
     a {
-      color: blue;
-      text-decoration: underline;
+      color: var(--text-color);
+      font-weight: 600;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
