@@ -2,23 +2,23 @@
   const infos = [
     {
       title: "HTML, CSS",
-      tech: "Bootstrap, Scss, Tailwind",
+      tech: "SCSS, Tailwind",
     },
     {
       title: "JavaScript",
-      tech: "Vue.js, Node.js, Express.js, Svelte.js",
+      tech: "Vue.js, Svelte.js, Node.js, Express.js",
     },
     {
       title: "PHP & DB",
       tech: "Laravel, MySQL, NoSQL",
     },
     {
-      title: "CMS / Static Site Generators",
-      tech: "WordPress, Shopify, Jekyll, 11ty, Astro",
+      title: "Static Site Generators",
+      tech: "Astro",
     },
     {
       title: "Design",
-      tech: "Figma, Photoshop, Illustrator",
+      tech: "Figma",
     },
   ];
 
@@ -59,7 +59,7 @@
 <section>
   <div class="container works">
     <div class="dotted">
-      <h2>Tech I use</h2>
+      <h2>Favorite tech</h2>
       <div>
         {#each infos as { title, tech }}
           <div class="info">
