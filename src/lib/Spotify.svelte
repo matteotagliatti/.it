@@ -54,7 +54,7 @@
 <div class="spotify">
   {#if spotify}
     <div class="container">
-      <h2>Music</h2>
+      <img src="/spotify.svg" alt="spotify-logo" />
       <div class="grid">
         {#each spotify as song}
           <SpotifyElement {...song} />
@@ -74,6 +74,11 @@
 
     .container {
       max-width: 80rem;
+    }
+
+    img {
+      height: 24px;
+      margin-bottom: 1.5rem;
     }
   }
 
