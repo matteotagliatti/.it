@@ -154,8 +154,8 @@
   }
 
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     margin: 0 auto;
   }
 
