@@ -1,5 +1,6 @@
 <script>
   import Header from "./lib/Header.svelte";
+  import Spotify from "./lib/Spotify/Index.svelte";
   import Works from "./lib/Works/Index.svelte";
 </script>
 
@@ -8,4 +9,5 @@
 >
   <Header />
   <Works />
+  <Spotify />
 </div>
