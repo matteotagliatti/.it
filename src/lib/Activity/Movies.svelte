@@ -37,8 +37,8 @@
       target="_blank">Letterboxd</a
     >.
   </p>
-  <div class="grid grid-cols-4 gap-2">
-    {#if movies}
+  {#if movies}
+    <div class="grid grid-cols-4 gap-2">
       {#each movies as movie}
         <a
           href={movie.link}
@@ -53,8 +53,8 @@
           </div>
         </a>
       {/each}
-    {:else}
-      <Loader />
-    {/if}
-  </div>
+    </div>
+  {:else}
+    <Loader />
+  {/if}
 </section>

@@ -31,8 +31,8 @@
       target="_blank">Oku</a
     > feed.
   </p>
-  <div class="flex flex-col gap-4">
-    {#if books}
+  {#if books}
+    <div class="flex flex-col gap-4">
       {#each books as book}
         <a
           href={book.link}
@@ -44,8 +44,8 @@
           <p class="text-slate-500 text-sm">{book.author.$t}</p>
         </a>
       {/each}
-    {:else}
-      <Loader />
-    {/if}
-  </div>
+    </div>
+  {:else}
+    <Loader />
+  {/if}
 </section>
