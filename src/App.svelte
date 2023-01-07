@@ -3,6 +3,7 @@
   import Spotify from "./lib/Spotify/Index.svelte";
   import Works from "./lib/Works/Index.svelte";
   import Activity from "./lib/Activity/Index.svelte";
+  import Navbar from "./lib/Navbar.svelte";
 </script>
 
 <div
@@ -12,4 +13,6 @@
   <Works />
   <Spotify />
   <Activity />
+  <div class="block h-20 sm:h-26" />
+  <Navbar />
 </div>
