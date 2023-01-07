@@ -3,5 +3,8 @@
   Laravel and Figma.
 </p>
 <p class="text-md">
-  Experimenting on my own with SvelteKit, Astro and Supabase.
+  Experimenting on my own with SvelteKit, Astro and Supabase. All my stuff is on <a
+    class="font-semibold hover:underline"
+    href="https://github.com/matteotagliatti">GitHub</a
+  >.
 </p>
