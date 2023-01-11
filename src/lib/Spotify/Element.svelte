@@ -3,17 +3,17 @@
 </script>
 
 <a
-  class="w-full flex items-start"
+  class="w-full flex items-start group"
   href={song.link}
   target="_blank"
   rel="noreferrer noopener"
 >
-  <div class="overflow-hidden shadow-lg basis-16 sm:basis-20 shrink-0">
+  <div class=" overflow-hidden shadow-lg basis-16 sm:basis-20 shrink-0">
     <img class="rounded w-full" src={song.img} alt={song.title} />
   </div>
   <div class="p-2 space-y-0.5">
     <h3
-      class="text-sm font-semibold sm:text-base leading-4 sm:leading-5 line-clamp-2"
+      class="text-sm font-semibold sm:text-base leading-4 sm:leading-5 line-clamp-2 group-hover:underline"
     >
       {song.title}
     </h3>
