@@ -46,7 +46,6 @@
     });
     // only 12 items in spotify
     songs = songs.splice(0, 12);
-    console.log(songs);
   });
 </script>
 
