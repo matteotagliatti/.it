@@ -1,0 +1,30 @@
+---
+nome: 404
+---
+
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    {% include head.html %}
+</head>
+    
+
+<body class="home">
+    {% include overlay.html %}
+    {% include logo.html %}
+          
+    <div class="header">
+        <div class="header-block">
+            <h3>Something went wrong</h3>
+            <h1>Page <span class="color">not</span> found 🤖</h1>
+            <div class="buttons-home">
+                <a href="index.html" class="btn animatelink">Back to Home<img src="/assets/img/arrow-small-light.svg"></a>
+            </div>
+        </div>
+    </div>
+
+{% include footer-scripts.html %}
+</body>
+
+</html>

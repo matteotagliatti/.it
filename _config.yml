@@ -1,0 +1,37 @@
+author: Matteo Tagliatti
+url: "https://matteotagliatti.it"
+email: matteotagliatti@gmail.com
+
+social-network-links:
+  github: https://github.com/matteotagliatti
+  linkedin: https://www.linkedin.com/in/matteotagliatti/
+
+collections:
+  work:
+    output: true
+    order:
+      - centrufficiooutlet.md
+      - studio-acqua-tortona.md
+      - centrosposiparadiso.md
+      - template-html.md
+      - magnacartasnc.md
+      - futsalvigevano.md
+      - motostore.md
+      - aep.md
+
+defaults:
+  - scope:
+      path: ""
+      type: "work"
+    values:
+      layout: "work"
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

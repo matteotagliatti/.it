@@ -1,16 +1,100 @@
-<!DOCTYPE html>
+---
+title: Web Developer
+description: I'm Matteo Tagliatti, a web developer with and eye for design, CrossFit addicted and books lover, located near Milan.
+---
+
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Matteo Tagliatti</title>
-    <meta
-      name="description"
-      content="A web developer with an eye for design."
-    />
-    <meta property="og:image" content="/share.jpg" />
-    <script type="module" src="/src/main.js"></script>
-  </head>
-  <body id="app"></body>
+
+<head>
+  {% include head.html %}
+</head>
+
+<body class="home">
+    {% include overlay.html %}
+    {% include logo.html %}
+
+  {% include socials.html %}
+  
+  <!-- Header -->
+  <div class="header">
+      <div class="header-block">
+          <h3>Matteo Tagliatti</h3>
+          <h1><span class="color">Web</span><br>Developer</h1>
+      </div>
+      <a href="#home-about" class="scroll-down"></a>
+  </div>
+
+  <!-- Image + Info -->
+  <div id="home-about" class="section home-about">
+      <div class="wrap-wide">
+          <div class="photo">
+              <div class="image-box">
+                  <img src="assets/img/placeholder-2.jpg" class="image-box-inside" alt="matteo tagliatti">
+                  <img src="assets/img/placeholder-2.jpg" class="image-box-small" alt="matteo tagliatti">
+                  <div class="image-box-overlay"></div>
+              </div>
+          </div>
+
+          <!-- Info -->
+          <div class="wrap">
+              <div class="block-left">
+                  <h2 class="light">Who?</h2>
+                  <p class="light">{{ page.description }} Clarity and simplicity are my guidelines.</p>
+              </div>
+
+              <div class="block-right">
+                  <div class="col-left">
+                      <h3 class="color">Development</h3>
+                      <p class="light">HTML & CSS</p>
+                      <p class="light">JavaScript</p>
+                      <p class="light">PHP</p>
+                      <p class="light">SQL</p>
+                  </div>
+                  <div class="col-right">
+                      <h3 class="color">Framework / CMS</h3>
+                      <p class="light">Vue.js & React.js</p>
+                      <p class="light">Lavarel</p>
+                      <p class="light">WordPress</p>
+                  </div>
+              </div>
+              
+          </div>
+      </div>
+  </div>
+
+  <!-- Work -->
+  <div class="section home-rw">
+      <div class="wrap-wide">
+
+        <!-- Work Title -->
+          <div class="rw-title">
+              <h2>Recent work</h2>
+              <a href="work.html" class="btn animatelink">All work<img src="/assets/img/arrow-small-light.svg"></a>
+          </div>
+          
+          <!-- Works -->
+          <div class="rw-cases">
+                {% for work in site.work %}
+                    {% if work.home == 1 %}
+                        <a href="{{ work.url }}" class="rw-case animatelink false" style="{{ work.bg }}">
+                            <h3>{{ work.data }}</h3>
+                            <div class="arrow"></div>
+                            <div class="case-title">
+                                <h2>{{ work.title }}</h2>
+                                <h2 style="{{ work.color }}">{{ work.work }}</h2>
+                            </div>
+                            <img data-src="{{ work.img }}" width="295" class="lazy">
+                            <div class="rw-case-overlay"></div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+          </div>
+
+      </div>
+  </div>
+
+    {% include footer.html %}
+    {% include footer-scripts.html %}
+</body>
 </html>

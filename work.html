@@ -1,0 +1,57 @@
+---
+title: Work
+description: My works
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    {% include head.html %}
+</head>
+    
+<body class="work">
+    {% include overlay.html %}
+    {% include logo.html %}
+    
+    {% include socials.html %}
+    
+    <div class="section work-b">
+        <div class="work-wrap">
+            <div class="work-block">
+                <div class="work-block-inside">
+                    <div class="work-block-white"></div>
+                    <h3>Portfolio</h3>
+                    <h1>My work<span class="color">:</span></h1>
+                    <p>Looking for more work? <br>Check my <a class="color" href="{{ site.social-network-links.github }}" target="_blank">GitHub</a></p>
+                    <div class="custom-navigation">
+                        <div class="custom-controls-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flexslider">
+                <ul class="slides">
+                    {% for work in site.work %}
+                    <li>
+                        <a href="{{ work.url }}" class="rw-case animatelink false" style="{{ work.bg }}">
+                            <h3>{{ work.data }}</h3>
+                            <div class="arrow"></div>
+                            <div class="case-title">
+                                <h2>{{ work.title }}</h2>
+                                <h2 style="{{ work.color }};">{{ work.work }}</h2>
+                            </div>
+                            <img data-src="{{ work.img }}" width="295" class="lazy">
+                        </a>
+                    </li>
+                    {% endfor %}
+        
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {% include footer-scripts.html %}
+</body>
+
+</html>

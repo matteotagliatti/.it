@@ -1,0 +1,76 @@
+/* ------------------------- Socials -------------------------------------------------- */
+
+.socials {
+	width: 40px;
+	position: fixed;
+	top: 50%;
+	transform: translate(0, -50%);
+	left: 20px;
+	border-radius: 20px;
+	mix-blend-mode: difference;
+	z-index: 20;
+}
+
+.social-btn {
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.social-btn:hover {
+	opacity: .5;
+}
+
+.socials-footer {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.ig { background: url("../img/ico-ig-light.svg") center center no-repeat;}
+.li { background: url("../img/ico-li-light.svg") center center no-repeat;}
+.em { background: url("../img/ico-em-light.svg") center center no-repeat;}
+.gh { background: url("../img/ico-gh-light.svg") center center no-repeat;}
+.books { background: url("../img/ico-books-light.svg") center center no-repeat;}
+.movies { background: url("../img/ico-movies-light.svg") center center no-repeat;}
+
+
+@media screen and (max-width: 760px){
+	.socials {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	body.active .socials {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.socials-footer {
+		opacity: 1;
+		visibility: visible;
+		position: absolute;
+		bottom: 18%;
+		transform: translate(-50%, 0);
+		left: 50%;
+	}
+	
+}
+
+/* ------------------------- Icons -------------------------------------------------- */
+
+a, span, .number{
+	-webkit-transition: all .25s ease-in-out;
+	-moz-transition: all .25s ease-in-out;
+  	-ms-transition: all .25s ease-in-out;
+  	-o-transition: all .25s ease-in-out;
+  	transition: all .25s ease-in-out;
+ }
+
+.overlayclick.loaded, .socials  {
+	-webkit-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;  
+}
+

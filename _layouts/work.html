@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    {% include head.html %}
+</head>
+    
+<body >
+    {% include overlay.html %}
+    {% include logo.html %}
+
+    {% include socials.html %}
+    
+    <!-- Header -->
+    <div class="section sub-header case-header" style="{{ page.bg }} url('/assets/img/line-case.svg') 15vw top no-repeat; background-size: contain;">
+        <div class="wrap-wide">
+            <div class="case-block">
+                <div class="case-left">
+                    <h3>{{ page.data }}</h3>
+                    <div class="case-title">
+                        <h1>{{ page.title }}</h1>
+                        <h1 style="{{ page.color }}">{{ page.work }}</h1>
+                    </div>
+                    <a href="#intro" class="btn more-info">All the info <img src="/assets/img/arrow-small-light.svg"></a>
+                </div>
+                <div class="case-right">
+                    <img src="{{ page.img }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div id="intro" class="section case-intro">
+        <div class="wrap">
+            <div class="sub-wrap left">
+                <h3></h3>
+                <h2>My work</h2>
+                <p>{{ page.description }} {{ page.description2 }}</p>
+            </div>
+            <div class="sub-wrap right">
+                <h3>work</h3>
+                <p>{{ page.work }}</p>
+                {% if page.website %}
+                <div class="stripe"></div>
+                <h3>Website</h3>
+                <p>{{ page.website }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Small Slide -->
+    <div class="section case-images">
+        <div class="wrap-wide">
+            <div class="slider-block-images">
+                <div class="flexslider-images">
+                    <ul class="slides">
+                        <li>
+                            <img src="{{ page.slide[0] }}">
+                        </li>
+                        <li>
+                            <img src="{{ page.slide[1] }}">
+                        </li>
+                        <li>
+                            <img src="{{ page.slide[2] }}">
+                        </li>
+                    </ul>
+                </div>
+                <div class="custom-controls-container-images"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Description -->
+    {% if page.description3 %}
+    <div class="section case-result-text">
+        <div class="wrap">
+            <h3></h3>
+            <h2>What have I done?</h2>
+            <p>{{ page.description3 }}</p>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Big Slide -->
+    <div class="section case-images case-result" style="{{ page.sfondo }}">
+        <div class="wrap-wide">
+            <div class="slider-block-images">
+                <div class="flexslider-results">
+                    <ul class="slides">
+                        {% assign i = 0 %}
+                        {% for big-slide in page.big-slide %}
+                        <li>
+                            <div class="wrap">
+                                <img src="{{ page.big-slide[i] }}">
+                            </div>
+                        </li>
+                        {% assign i = i | plus:1 %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="custom-controls-container-results"></div>
+            </div>
+        </div>
+    </div>
+
+    {% include footer.html %}
+    {% include footer-scripts.html %}
+</body>
+
+</html>
