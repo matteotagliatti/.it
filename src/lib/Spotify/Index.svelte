@@ -9,7 +9,7 @@
   const refresh_token = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
   const redirect_uri = "http://localhost:5173/";
   const token_endpoint = `https://accounts.spotify.com/api/token`;
-  const top_tracks_endpoint = `https://api.spotify.com/v1/me/top/tracks`;
+  const top_tracks_endpoint = `https://api.spotify.com/v1/me/top/tracks?limit=12`;
 
   let songs;
 
