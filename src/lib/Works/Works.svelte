@@ -16,7 +16,7 @@
       title: "matteotagliatti.it (Old)",
       subtitle: "JQuery, Jekyll",
       date: 2021,
-      link: "https://github.com/matteotagliatti/matteotagliatti.it-v1",
+      link: "https://old-matteotagliatti.netlify.app/",
     },
     {
       title: "Studio Acqua",
