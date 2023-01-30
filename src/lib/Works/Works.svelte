@@ -34,7 +34,12 @@
 </script>
 
 {#each works as work}
-  <a href={work.link} class="block group" target="_blank">
+  <a
+    href={work.link}
+    class="block group"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <h3 class="text-md font-semibold group-hover:underline leading-none">
       {work.title}
     </h3>
