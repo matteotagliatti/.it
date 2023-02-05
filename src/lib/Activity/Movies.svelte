@@ -33,7 +33,7 @@
   <p>
     Film or tv serie to watch? Here's the latest from my <a
       href="https://letterboxd.com/mattetgl"
-      class="underline text-indigo-600"
+      class="underline text-indigo-600 dark:text-indigo-400"
       target="_blank"
       rel="noopener noreferrer">Letterboxd</a
     >.

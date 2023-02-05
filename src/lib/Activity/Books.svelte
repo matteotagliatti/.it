@@ -26,7 +26,7 @@
     Looking for a book to read? Check out the last few I've finished pulled from
     my <a
       href="https://oku.club/user/mattetgl"
-      class="underline text-indigo-600"
+      class="underline text-indigo-600 dark:text-indigo-400"
       rel="noopener noreferrer"
       target="_blank">Oku</a
     > feed.
@@ -41,7 +41,9 @@
           rel="noopener noreferrer"
         >
           <h2 class="group-hover:underline font-semibold">{book.title}</h2>
-          <p class="text-slate-500 text-sm">{book.author.$t}</p>
+          <p class="text-slate-500 text-sm dark:text-gray-400">
+            {book.author.$t}
+          </p>
         </a>
       {/each}
     </div>

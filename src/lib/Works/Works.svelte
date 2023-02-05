@@ -43,7 +43,7 @@
     <h3 class="text-md font-semibold group-hover:underline leading-none">
       {work.title}
     </h3>
-    <small class="text-slate-500">
+    <small class="text-slate-500 dark:text-gray-400">
       {work.subtitle} - {work.date}
     </small>
   </a>

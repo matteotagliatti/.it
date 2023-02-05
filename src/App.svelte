@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class="children:w-full children:mx-auto children:px-4 space-y-10 sm:space-y-20"
+  class="children:w-full children:mx-auto children:px-4 space-y-10 sm:space-y-20 dark:bg-zinc-900"
 >
   <Header />
   <Works />
