@@ -13,7 +13,7 @@
         .get(XMLtoApi + OkuRSSLink)
         .then((res) => res.data.items);
       if (books.length > 5) {
-        books = books.slice(0, 5);
+        books = books.slice(0, 6);
       }
     } catch (error) {
       console.log(error);
