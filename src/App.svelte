@@ -13,6 +13,6 @@
   <Works />
   <Spotify />
   <Activity />
-  <div class="block h-20 sm:h-26" />
+  <div class="block h-14 sm:h-26" />
   <Navbar />
 </div>

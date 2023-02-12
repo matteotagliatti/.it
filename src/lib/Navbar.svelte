@@ -18,9 +18,9 @@
   ];
 </script>
 
-<section class="fixed bottom-8 flex justify-center z-10">
+<section class="fixed bottom-5 sm:bottom-8 flex justify-center z-10">
   <nav
-    class="flex items-center p-4 gap-3 sm:gap-4 rounded-lg w-fit shadow-md z-10 bg-gray-200 bg-opacity-90 backdrop-filter backdrop-blur-sm"
+    class="flex items-center p-4 gap-3 sm:gap-4 rounded-lg w-fit shadow-md bg-gray-200 bg-opacity-90 backdrop-filter backdrop-blur-sm"
   >
     <a href="mailto:matteotagliatti@gmail.com">
       <img class="w-6" src="/email.svg" alt="Email" />
