@@ -2,17 +2,17 @@
   const socials = [
     {
       name: "GitHub",
-      icon: "/github.svg",
+      icon: "/icons/github.svg",
       url: "https://github.com/matteotagliatti",
     },
     {
       name: "LinkedIn",
-      icon: "/linkedin.svg",
+      icon: "/icons/linkedin.svg",
       url: "https://www.linkedin.com/in/matteotagliatti/",
     },
     {
       name: "LinkedIn",
-      icon: "/instagram.svg",
+      icon: "/icons/instagram.svg",
       url: "https://www.instagram.com/matteotagliatti/",
     },
   ];
@@ -23,7 +23,7 @@
     class="flex items-center p-4 gap-3 sm:gap-4 rounded-lg w-fit shadow-md bg-gray-200 bg-opacity-90 backdrop-filter backdrop-blur-sm"
   >
     <a href="mailto:matteotagliatti@gmail.com">
-      <img class="w-6" src="/email.svg" alt="Email" />
+      <img class="w-6" src="/icons/email.svg" alt="Email" />
     </a>
     <div class="w-[1px] h-[20px] bg-zinc-400" />
     {#each socials as link}
