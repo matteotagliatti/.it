@@ -1,6 +1,12 @@
 <script>
   const works = [
     {
+      title: "Kindle Clippings Parser",
+      subtitle: "Node.js",
+      date: 2023,
+      link: "https://github.com/matteotagliatti/kindle-clippings-parser",
+    },
+    {
       title: "DeliveBoo",
       subtitle: "Laravel, Vue.js",
       date: 2022,
@@ -23,12 +29,6 @@
       subtitle: "WordPress",
       date: 2021,
       link: "https://studioacquatortona.it/",
-    },
-    {
-      title: "Centro Sposi Paradiso",
-      subtitle: "WordPress",
-      date: 2020,
-      link: "https://centrosposiparadiso.it/",
     },
   ];
 </script>
