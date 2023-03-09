@@ -9,7 +9,7 @@
   <div
     class="space-y-6 sm:border sm:border-dashed sm:rounded-xl sm:border-gray-600"
   >
-    <h2 class="text-xl font-semibold">Works</h2>
+    <h2 class="text-xl font-semibold">GitHub</h2>
     <div class="space-y-4">
       <Works />
     </div>
