@@ -1,6 +1,12 @@
 <script>
   const works = [
     {
+      title: "Dilla Drums",
+      subtitle: "React",
+      date: 2023,
+      link: "https://github.com/matteotagliatti/dilla-drums",
+    },
+    {
       title: "Kindle Clippings Parser",
       subtitle: "Node.js",
       date: 2023,
@@ -23,12 +29,6 @@
       subtitle: "JQuery, Jekyll",
       date: 2021,
       link: "https://old-matteotagliatti.netlify.app/",
-    },
-    {
-      title: "Studio Acqua",
-      subtitle: "WordPress",
-      date: 2021,
-      link: "https://studioacquatortona.it/",
     },
   ];
 </script>
