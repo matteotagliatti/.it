@@ -50,6 +50,8 @@
       <a
         href={movie.link}
         class="block overflow-hidden rounded relative w-full"
+        target="_blank"
+        rel="noreferrer noopener"
       >
         <div class="block pt-[150%]">
           <img
