@@ -1,9 +1,9 @@
 <script>
-  import Header from "./lib/Header.svelte";
-  import Spotify from "./lib/Spotify/Index.svelte";
-  import Works from "./lib/Works/Index.svelte";
-  import Activity from "./lib/Activity/Index.svelte";
-  import Navbar from "./lib/Navbar.svelte";
+  import Header from "./components/Header.svelte";
+  import Spotify from "./components/Spotify/Index.svelte";
+  import Works from "./components/Works/Index.svelte";
+  import Activity from "./components/Activity/Index.svelte";
+  import Navbar from "./components/Navbar.svelte";
 </script>
 
 <div
