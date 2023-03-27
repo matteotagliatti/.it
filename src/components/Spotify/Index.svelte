@@ -49,9 +49,7 @@
   });
 </script>
 
-<section
-  class="w-full bg-gradient-to-t bg-zinc-100 dark:bg-zinc-800 dark:text-white"
->
+<section class="w-full bg-gradient-to-t bg-zinc-100">
   <div class="mx-auto space-y-4 max-w-7xl py-4 sm:py-12 sm:px-8">
     <a
       href="https://open.spotify.com/user/matteotagliatti"

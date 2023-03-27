@@ -44,7 +44,7 @@
         rel="noopener noreferrer"
       >
         <h2 class="group-hover:underline font-semibold">{book.title}</h2>
-        <p class="text-slate-500 text-sm dark:text-gray-400">
+        <p class="text-slate-500 text-sm">
           {book.author}
         </p>
       </a>
