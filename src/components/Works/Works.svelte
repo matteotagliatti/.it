@@ -28,7 +28,7 @@
       title: "matteotagliatti.it (Old)",
       subtitle: "JQuery, Jekyll",
       date: 2021,
-      link: "https://old-matteotagliatti.netlify.app/",
+      link: "https://old.matteotagliatti.it/",
     },
   ];
 </script>
