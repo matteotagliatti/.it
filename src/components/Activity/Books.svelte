@@ -21,9 +21,9 @@
       link: "https://www.goodreads.com/book/show/63651.Grand_Central_Winter",
     },
     {
-      title: "KLF: Chaos Magic Music Money",
-      author: "John Higgs",
-      link: "https://www.goodreads.com/book/show/16166062-klf",
+      title: "Dilla Times",
+      author: "Dan Charnas",
+      link: "https://www.goodreads.com/book/show/57693653-dilla-time",
     },
     {
       title: "The Stories of Breece D'J Pancake",
