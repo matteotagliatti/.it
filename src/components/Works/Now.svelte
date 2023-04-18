@@ -14,7 +14,7 @@
     href="https://github.com/matteotagliatti"
     target="_blank"
     rel="noopener noreferrer">GitHub</a
-  >. Some small experiments on
+  >. Some experiments on
   <a
     class="font-semibold hover:underline"
     href="https://codepen.io/matteotagliatti">Codepen</a
