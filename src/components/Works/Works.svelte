@@ -1,6 +1,12 @@
 <script>
   const works = [
     {
+      title: "bklst",
+      subtitle: "React, Supabase",
+      date: 2023,
+      link: "https://github.com/matteotagliatti/bklst",
+    },
+    {
       title: "Dilla Drums",
       subtitle: "React",
       date: 2023,
@@ -23,12 +29,6 @@
       subtitle: "JavaScript, Jekyll",
       date: 2022,
       link: "https://github.com/matteotagliatti/arcade-games",
-    },
-    {
-      title: "matteotagliatti.it (Old)",
-      subtitle: "JQuery, Jekyll",
-      date: 2021,
-      link: "https://old.matteotagliatti.it/",
     },
   ];
 </script>
