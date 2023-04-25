@@ -7,8 +7,8 @@
   > working on industrial software with Svelte, Tailwind, Laravel and Figma.
 </p>
 <p class="text-md">
-  Exited about serverless stuff. Experimenting on my own with React, Astro, Node
-  and Supabase. All my stuff is on
+  Exited about serverless stuff. Experimenting on my own with different
+  technologies. All my stuff is on
   <a
     class="font-semibold hover:underline"
     href="https://github.com/matteotagliatti"

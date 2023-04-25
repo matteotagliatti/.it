@@ -2,7 +2,7 @@
   const works = [
     {
       title: "bklst",
-      subtitle: "React, Supabase",
+      subtitle: "Next, React, Supabase",
       date: 2023,
       link: "https://github.com/matteotagliatti/bklst",
     },
