@@ -1,7 +1,7 @@
 <p class="text-md">
   Leader Frontend Developer and Designer at <a
     href="https://www.linkedin.com/search/results/all/?keywords=TI3&sid=YLg"
-    class="font-semibold"
+    class="font-semibold hover:underline"
     target="_blank"
     rel="noopener noreferrer">TI3</a
   > working on industrial software with Svelte, Tailwind, Laravel and Figma.
