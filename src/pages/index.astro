@@ -1,11 +1,89 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import photo from "../images/photo.jpg";
+import Item from "../components/Item.astro";
+import Photo from "../components/Photo.astro";
+import BubbleContainer from "../components/BubbleContainer.astro";
+import Bubble from "../components/Bubble.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
 ---
 
 <Layout title="Matteo Tagliatti">
-  <div class="flex gap-2.5 justify-center items-end">
-    <img class="rounded-full w-6" src={photo} alt="photo" />
-    <h1 class="font-bold text-white">Prova</h1>
-  </div>
+  <!-- Title -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          Hey I'm Matteo! A web developer and designer based in Milan, Italy.
+        </Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          Currently working as leader frontend developer and designer at <Link
+            href="#"
+          >
+            TI3
+          </Link>.
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+  <!-- Works -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>GitHub</Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          <Link href="#">bklst</Link>. A simple book tracker made with different
+          frontend frameworks.
+        </Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          <Link href="#">Kindle Clippings Parser</Link>. Node.js CLI tool to
+          manage Kindle clippings.
+        </Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          <Link href="#">Arcade Games</Link>. Games made with Vanilla JS and
+          Jekyll.
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+  <!-- Other -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          When I'm not working i experiment with code and design on my own in my
+          <Link href="https://github.com/matteotagliatti">GitHub</Link>. I also
+          love reading, CrossFit, black and electronic music, cooking and
+          traveling.
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+  <!-- Footer -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          Say hello on
+          <Link href="#">Twitter</Link> or <Link
+            href="mailto:matteotagliatti@gmail.com"
+          >
+            email
+          </Link>
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
 </Layout>

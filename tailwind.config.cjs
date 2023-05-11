@@ -5,7 +5,13 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", "sans-serif"],
     },
-    extend: {},
+
+    extend: {
+      colors: {
+        background: "#050505",
+        bubble: "#fafcff14",
+      },
+    },
   },
   plugins: [],
 };
