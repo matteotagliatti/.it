@@ -10,13 +10,16 @@ import { getCurrentPlaying } from "../api/spotify";
 
 const data = await getCurrentPlaying();
 console.log(data);
-let song = null;
+let listening = null;
 
-/* song = {
+// if data is a track
+if (data.currently_playing_type === "track") {
+  listening = {
     name: data.item.name,
     artist: data.item.artists[0].name,
     url: data.item.external_urls.spotify,
-  }; */
+  };
+}
 ---
 
 <Layout title="Matteo Tagliatti">
@@ -79,22 +82,17 @@ let song = null;
     <BubbleContainer>
       <!-- Spotify -->
       <Bubble>
-        <Text>
-          <!-- {
-            song && (
-              <Link href={song.url}>
-                Currently playing {song.name} by {song.artist} on Spotify
+        {
+          listening && (
+            <Text>
+              Currently listening{" "}
+              <Link href={listening.url}>
+                {listening.name} by {listening.artist}
               </Link>
-            )
-          } -->
-          <!-- {
-            !song && (
-              <Link href="https://open.spotify.com/user/matteotagliatti">
-                Listen to my music on Spotify
-              </Link>
-            )
-          } -->
-        </Text>
+            </Text>
+          )
+        }
+        {!listening && <Text>I'm not listening to anything right now</Text>}
       </Bubble>
     </BubbleContainer>
   </Item>
