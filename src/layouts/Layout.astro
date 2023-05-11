@@ -1,0 +1,41 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <style>
+      @font-face {
+        font-family: "Inter";
+        font-weight: 100 900;
+        font-display: swap;
+        font-style: italic;
+        font-named-instance: "Italic";
+        src: url("/fonts/Inter-italic.var.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Inter";
+        font-weight: 100 900;
+        font-display: swap;
+        font-style: normal;
+        font-named-instance: "Regular";
+        src: url("/fonts/Inter-roman.var.woff2") format("woff2");
+      }
+    </style>
+  </head>
+  <body class="min-height-100 bg-neutral-900 px-4 py-32">
+    <main class="w-full">
+      <slot />
+    </main>
+  </body>
+</html>
