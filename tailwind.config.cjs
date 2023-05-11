@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         background: "#050505",
         bubble: "#fafcff14",
+        para: "#ffffffcc",
       },
     },
   },
