@@ -1,13 +1,14 @@
 ---
 export interface Props {
   href: string;
+  blank?: boolean;
 }
 
-const { href } = Astro.props;
+const { href, blank = true } = Astro.props;
 ---
 
 <a
   href={href}
   class="text-white font-medium underline hover:cursor-pointer"
-  target="_blank"><slot /></a
+  target={blank ? '_blank' : null}><slot /></a
 >

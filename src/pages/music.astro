@@ -1,0 +1,58 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Item from "../components/Item.astro";
+import Photo from "../components/Photo.astro";
+import BubbleContainer from "../components/BubbleContainer.astro";
+import Bubble from "../components/Bubble.astro";
+import BubbleLink from "../components/BubbleLink.astro";
+import Text from "../components/Text.astro";
+import TextAsLink from "../components/TextAsLink.astro";
+import Link from "../components/Link.astro";
+
+import { getTopTracks } from '../api/spotify'
+const data = await getTopTracks()
+console.log(data);
+let songs = null;
+
+if (data.items) {
+    songs = data.items.map((song) => {
+        return {
+            name: song.name,
+            artist: song.artists[0].name,
+            url: song.external_urls.spotify
+        }
+    })
+}
+
+console.log(songs);
+
+---
+
+<Layout title="Matteo Tagliatti - Music">
+    <Item>
+        <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          Spotify Top Tracks
+        </Text>
+      </Bubble>
+        {
+            songs.map((song) => {
+                return (
+                    <BubbleLink href={song.url}>
+                        <Text>
+                            <TextAsLink>{song.name}</TextAsLink> by {song.artist}
+                        </Text>
+                    </BubbleLink>
+                )
+            })
+        }
+      <Bubble>
+        <Text>
+          Go <Link href="/" blank={false}>back</Link>
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+    </Item>
+</Layout>
