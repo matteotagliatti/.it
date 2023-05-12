@@ -4,52 +4,47 @@ import Item from "../components/Item.astro";
 import Photo from "../components/Photo.astro";
 import BubbleContainer from "../components/BubbleContainer.astro";
 import Bubble from "../components/Bubble.astro";
-import BubbleLink from "../components/BubbleLink.astro";
 import Text from "../components/Text.astro";
-import TextAsLink from "../components/TextAsLink.astro";
 import Link from "../components/Link.astro";
 
-import { getTopTracks } from '../api/spotify'
-const data = await getTopTracks()
+import { getTopTracks } from "../api/spotify";
+const data = await getTopTracks();
 let songs = null;
 
 if (data.items) {
-    songs = data.items.map((song) => {
-        return {
-            name: song.name,
-            artist: song.artists[0].name,
-            url: song.external_urls.spotify
-        }
-    })
+  songs = data.items.map((song) => {
+    return {
+      name: song.name,
+      artist: song.artists[0].name,
+      url: song.external_urls.spotify,
+    };
+  });
 }
-
 ---
 
 <Layout title="Matteo Tagliatti - Music">
-    <Item>
-        <Photo />
+  <Item>
+    <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>
-          Spotify Top Tracks
-        </Text>
+        <Text>Spotify Top Tracks</Text>
       </Bubble>
-        {
-            songs.map((song) => {
-                return (
-                    <BubbleLink href={song.url}>
-                        <Text>
-                            <TextAsLink>{song.name}</TextAsLink> by {song.artist}
-                        </Text>
-                    </BubbleLink>
-                )
-            })
-        }
+      {
+        songs.map((song) => {
+          return (
+            <Bubble href={song.url}>
+              <Text>
+                <Link>{song.name}</Link> by {song.artist}
+              </Text>
+            </Bubble>
+          );
+        })
+      }
       <Bubble>
         <Text>
           Go <Link href="/" blank={false}>back</Link>
         </Text>
       </Bubble>
     </BubbleContainer>
-    </Item>
+  </Item>
 </Layout>

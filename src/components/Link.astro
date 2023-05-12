@@ -1,14 +1,25 @@
 ---
 export interface Props {
-  href: string;
+  href?: string;
   blank?: boolean;
 }
 
 const { href, blank = true } = Astro.props;
+const classes = "text-white font-medium underline";
 ---
 
-<a
-  href={href}
-  class="text-white font-medium underline hover:cursor-pointer"
-  target={blank ? '_blank' : null}><slot /></a
->
+{
+  href ? (
+    <a
+      href={href}
+      class={`${classes} hover:cursor-pointer`}
+      target={blank ? "_blank" : null}
+    >
+      <slot />
+    </a>
+  ) : (
+    <span class={classes}>
+      <slot />
+    </span>
+  )
+}

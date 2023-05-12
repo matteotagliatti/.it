@@ -4,9 +4,7 @@ import Item from "../components/Item.astro";
 import Photo from "../components/Photo.astro";
 import BubbleContainer from "../components/BubbleContainer.astro";
 import Bubble from "../components/Bubble.astro";
-import BubbleLink from "../components/BubbleLink.astro";
 import Text from "../components/Text.astro";
-import TextAsLink from "../components/TextAsLink.astro";
 import Link from "../components/Link.astro";
 import { getCurrentPlaying } from "../api/spotify";
 
@@ -58,25 +56,23 @@ if (data.currently_playing_type === "track") {
       <Bubble href="https://github.com/matteotagliatti">
         <Text>GitHub</Text>
       </Bubble>
-      <BubbleLink href="https://github.com/matteotagliatti/bklst">
+      <Bubble href="https://github.com/matteotagliatti/bklst">
         <Text>
-          <TextAsLink>bklst</TextAsLink>. A simple book tracker made with
-          different frontend frameworks
+          <Link>bklst</Link>. A simple book tracker made with different frontend
+          frameworks
         </Text>
-      </BubbleLink>
-      <BubbleLink
-        href="https://github.com/matteotagliatti/kindle-clippings-parser"
-      >
+      </Bubble>
+      <Bubble href="https://github.com/matteotagliatti/kindle-clippings-parser">
         <Text>
-          <TextAsLink>Kindle Clippings Parser</TextAsLink>. Node.js CLI tool to
-          manage Kindle clippings
+          <Link>Kindle Clippings Parser</Link>. Node.js CLI tool to manage
+          Kindle clippings
         </Text>
-      </BubbleLink>
-      <BubbleLink href="https://github.com/matteotagliatti/arcade-games">
+      </Bubble>
+      <Bubble href="https://github.com/matteotagliatti/arcade-games">
         <Text>
-          <TextAsLink>Arcade Games</TextAsLink>. Made with Vanilla JS and Jekyll
+          <Link>Arcade Games</Link>. Made with Vanilla JS and Jekyll
         </Text>
-      </BubbleLink>
+      </Bubble>
     </BubbleContainer>
   </Item>
   <!-- Other -->
@@ -86,16 +82,22 @@ if (data.currently_playing_type === "track") {
       <!-- Spotify -->
       <Bubble>
         {
-          listening && (
+          listening ? (
             <Text>
               Currently listening{" "}
               <Link href={listening.url}>
                 {listening.name} by {listening.artist}
               </Link>
             </Text>
+          ) : (
+            <Text>
+              I'm not listening to anything right now. Top tracks{" "}
+              <Link href="/music" blank={false}>
+                here
+              </Link>
+            </Text>
           )
         }
-        {!listening && <Text>I'm not listening to anything right now. Top tracks <Link href="/music" blank={false}>here</Link></Text>}
       </Bubble>
     </BubbleContainer>
   </Item>
@@ -106,9 +108,13 @@ if (data.currently_playing_type === "track") {
       <Bubble>
         <Text>
           Say hello on
-          <Link href="https://www.instagram.com/matteotagliatti/">Instagram</Link> or <Link href="mailto:matteotagliatti@gmail.com">email</Link>
+          <Link href="https://www.instagram.com/matteotagliatti/">
+            Instagram
+          </Link> or <Link href="mailto:matteotagliatti@gmail.com">email</Link>
         </Text>
-        <p class="absolute left-0 top-[45px] text-[13px] text-neutral-500">Seen</p>
+        <p class="absolute left-0 top-[45px] text-[13px] text-neutral-500">
+          Seen
+        </p>
       </Bubble>
     </BubbleContainer>
   </Item>
