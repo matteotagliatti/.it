@@ -4,7 +4,9 @@ import Item from "../components/Item.astro";
 import Photo from "../components/Photo.astro";
 import BubbleContainer from "../components/BubbleContainer.astro";
 import Bubble from "../components/Bubble.astro";
+import BubbleLink from "../components/BubbleLink.astro";
 import Text from "../components/Text.astro";
+import TextAsLink from "../components/TextAsLink.astro";
 import Link from "../components/Link.astro";
 import { getCurrentPlaying } from "../api/spotify";
 
@@ -53,30 +55,33 @@ if (data.currently_playing_type === "track") {
   <Item>
     <Photo />
     <BubbleContainer>
-      <Bubble>
-        <Link href="https://github.com/matteotagliatti">GitHub</Link>
-      </Bubble>
-      <Bubble>
+      <BubbleLink href="https://github.com/matteotagliatti">
+        <TextAsLink>GitHub</TextAsLink>
+      </BubbleLink>
+      <BubbleLink href="https://github.com/matteotagliatti/bklst">
         <Text>
-          <Link href="https://github.com/matteotagliatti/bklst">bklst</Link>. A
-          simple book tracker made with different frontend frameworks
+          <TextAsLink>bklst</TextAsLink>. A simple book tracker made with
+          different frontend frameworks
         </Text>
-      </Bubble>
-      <Bubble>
+      </BubbleLink>
+      <BubbleLink
+        href="https://github.com/matteotagliatti/kindle-clippings-parser"
+      >
         <Text>
-          <Link href="https://github.com/matteotagliatti/kindle-clippings-parser">Kindle Clippings Parser</Link>. Node.js CLI tool to manage Kindle clippings
+          <TextAsLink>Kindle Clippings Parser</TextAsLink>. Node.js CLI tool to
+          manage Kindle clippings
         </Text>
-      </Bubble>
-      <Bubble>
+      </BubbleLink>
+      <BubbleLink href="https://github.com/matteotagliatti/dilla-drums">
         <Text>
-          <Link href="https://github.com/matteotagliatti/dilla-drums">Dilla Drums</Link>. React SPA to play drums
+          <TextAsLink>Dilla Drums</TextAsLink>. React SPA to play drums
         </Text>
-      </Bubble>
-      <Bubble>
+      </BubbleLink>
+      <BubbleLink href="https://github.com/matteotagliatti/arcade-games">
         <Text>
-          <Link href="https://github.com/matteotagliatti/arcade-games">Arcade Games</Link>. Made with Vanilla JS and Jekyll
+          <TextAsLink>Arcade Games</TextAsLink>. Made with Vanilla JS and Jekyll
         </Text>
-      </Bubble>
+      </BubbleLink>
     </BubbleContainer>
   </Item>
   <!-- Other -->
@@ -106,11 +111,7 @@ if (data.currently_playing_type === "track") {
       <Bubble>
         <Text>
           Say hello on
-          <Link href="#">Twitter</Link> or <Link
-            href="mailto:matteotagliatti@gmail.com"
-          >
-            email
-          </Link>
+          <Link href="https://www.instagram.com/matteotagliatti/">Instagram</Link> or <Link href="mailto:matteotagliatti@gmail.com">email</Link>
         </Text>
         <p class="absolute left-0 top-12 text-[13px] text-neutral-500">Seen</p>
       </Bubble>
