@@ -91,13 +91,15 @@ if (data.currently_playing_type === "track") {
             </Text>
           ) : (
             <Text>
-              I'm not listening to anything right now. Top tracks{" "}
-              <Link href="/music" blank={false}>
-                here
-              </Link>
+              I'm not listening to anything right now.
             </Text>
           )
         }
+      </Bubble>
+      <Bubble>
+        <Text>
+          My most listened songs <Link href="/music" blank={false}>here</Link>
+        </Text>
       </Bubble>
     </BubbleContainer>
   </Item>
