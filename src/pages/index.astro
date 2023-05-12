@@ -9,7 +9,6 @@ import Link from "../components/Link.astro";
 import { getCurrentPlaying } from "../api/spotify";
 
 const data = await getCurrentPlaying();
-console.log(data);
 let listening = null;
 
 // if data is a track
