@@ -14,12 +14,8 @@ const classes = "text-white font-medium underline";
       href={href}
       class={`${classes} hover:cursor-pointer`}
       target={blank ? "_blank" : null}
-    >
-      <slot />
-    </a>
+    ><slot /></a>
   ) : (
-    <span class={classes}>
-      <slot />
-    </span>
+    <span class={classes}><slot /></span>
   )
 }
