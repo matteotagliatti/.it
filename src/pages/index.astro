@@ -1,0 +1,120 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Item from "../components/Item.astro";
+import Photo from "../components/Photo.astro";
+import BubbleContainer from "../components/BubbleContainer.astro";
+import Bubble from "../components/Bubble.astro";
+import BubbleLink from "../components/BubbleLink.astro";
+import Text from "../components/Text.astro";
+import TextAsLink from "../components/TextAsLink.astro";
+import Link from "../components/Link.astro";
+import { getCurrentPlaying } from "../api/spotify";
+
+const data = await getCurrentPlaying();
+let listening = null;
+
+// if data is a track
+if (data.currently_playing_type === "track") {
+  listening = {
+    name: data.item.name,
+    artist: data.item.artists[0].name,
+    url: data.item.external_urls.spotify,
+  };
+}
+---
+
+<Layout title="Matteo Tagliatti">
+  <!-- Title -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          Hey I'm Matteo! A web developer and designer based in Milan, Italy
+        </Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          Currently working as leader frontend developer and designer at <Link
+            href="#"
+          >
+            TI3
+          </Link>
+        </Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          Experiment on my own in my
+          <Link href="https://github.com/matteotagliatti">GitHub</Link>. I also
+          love reading, CrossFit, music, cooking and traveling
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+  <!-- Works -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble href="https://github.com/matteotagliatti">
+        <Text>GitHub</Text>
+      </Bubble>
+      <BubbleLink href="https://github.com/matteotagliatti/bklst">
+        <Text>
+          <TextAsLink>bklst</TextAsLink>. A simple book tracker made with
+          different frontend frameworks
+        </Text>
+      </BubbleLink>
+      <BubbleLink
+        href="https://github.com/matteotagliatti/kindle-clippings-parser"
+      >
+        <Text>
+          <TextAsLink>Kindle Clippings Parser</TextAsLink>. Node.js CLI tool to
+          manage Kindle clippings
+        </Text>
+      </BubbleLink>
+      <BubbleLink href="https://github.com/matteotagliatti/dilla-drums">
+        <Text>
+          <TextAsLink>Dilla Drums</TextAsLink>. React SPA to play drums
+        </Text>
+      </BubbleLink>
+      <BubbleLink href="https://github.com/matteotagliatti/arcade-games">
+        <Text>
+          <TextAsLink>Arcade Games</TextAsLink>. Made with Vanilla JS and Jekyll
+        </Text>
+      </BubbleLink>
+    </BubbleContainer>
+  </Item>
+  <!-- Other -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <!-- Spotify -->
+      <Bubble>
+        {
+          listening && (
+            <Text>
+              Currently listening{" "}
+              <Link href={listening.url}>
+                {listening.name} by {listening.artist}
+              </Link>
+            </Text>
+          )
+        }
+        {!listening && <Text>I'm not listening to anything right now</Text>}
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+  <!-- Footer -->
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          Say hello on
+          <Link href="https://www.instagram.com/matteotagliatti/">Instagram</Link> or <Link href="mailto:matteotagliatti@gmail.com">email</Link>
+        </Text>
+        <p class="absolute left-0 top-[45px] text-[13px] text-neutral-500">Seen</p>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+</Layout>

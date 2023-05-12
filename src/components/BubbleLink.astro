@@ -1,0 +1,14 @@
+---
+export interface LinkProps {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a
+  href={href}
+  class="py-2 px-3 rounded-ss-2xl rounded-se-2xl rounded-es-lg rounded-ee-2xl bg-bubble border border-white/[.03] hover:cursor-pointer hover:translate-x-1 transition-all"
+  target="_blank"
+  ><slot /></a
+>
