@@ -3,7 +3,7 @@ const client_secret = import.meta.env.SPOTIFY_CLIENT_SECRET;
 const refresh_token = import.meta.env.SPOTIFY_REFRESH_TOKEN;
 const token_endpoint = `https://accounts.spotify.com/api/token`;
 const now_playing_endpoint = `https://api.spotify.com/v1/me/player/currently-playing`;
-const top_tracks_endpoint = `https://api.spotify.com/v1/me/top/tracks`;
+const top_tracks_endpoint = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=20&offset=0`;
 
 const get = (path, headers) =>
   fetch(path, headers).then((r) =>
