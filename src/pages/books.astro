@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Item from "../components/Item.astro";
+import Photo from "../components/Photo.astro";
+import BubbleContainer from "../components/BubbleContainer.astro";
+import Bubble from "../components/Bubble.astro";
+import Text from "../components/Text.astro";
+import Link from "../components/Link.astro";
+
+import { getReadBooks, getReadingBooks } from "../api/books.js";
+const booksRead = await getReadBooks();
+const booksReading = await getReadingBooks();
+---
+
+<Layout title="Books - Matteo Tagliatti">
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>Reading</Text>
+      </Bubble>
+      {
+        booksReading.map((book) => {
+          return (
+            <Bubble>
+              <Text>
+                <Link>{book.title}</Link> by {book.author}
+              </Text>
+            </Bubble>
+          );
+        })
+      }
+    </BubbleContainer>
+  </Item>
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>Read</Text>
+      </Bubble>
+      {
+        booksRead.map((book) => {
+          return (
+            <Bubble>
+              <Text>
+                <Link>{book.title}</Link> by {book.author}
+              </Text>
+            </Bubble>
+          );
+        })
+      }
+    </BubbleContainer>
+  </Item>
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          Go <Link href="/" blank={false}>back</Link>
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+</Layout>
