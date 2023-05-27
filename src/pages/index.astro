@@ -6,19 +6,6 @@ import BubbleContainer from "../components/BubbleContainer.astro";
 import Bubble from "../components/Bubble.astro";
 import Text from "../components/Text.astro";
 import Link from "../components/Link.astro";
-import { getCurrentPlaying } from "../api/spotify";
-
-const data = await getCurrentPlaying();
-let listening = null;
-
-// if data is a track
-if (data.currently_playing_type === "track") {
-  listening = {
-    name: data.item.name,
-    artist: data.item.artists[0].name,
-    url: data.item.external_urls.spotify,
-  };
-}
 ---
 
 <Layout title="Matteo Tagliatti">
@@ -79,26 +66,15 @@ if (data.currently_playing_type === "track") {
   <Item>
     <Photo />
     <BubbleContainer>
-      <!-- Spotify -->
-      <Bubble>
-        {
-          listening ? (
-            <Text>
-              Currently listening{" "}
-              <Link href={listening.url}>
-                {listening.name} by {listening.artist}
-              </Link>
-            </Text>
-          ) : (
-            <Text>
-              I'm not listening to anything right now.
-            </Text>
-          )
-        }
-      </Bubble>
       <Bubble>
         <Text>
           My most listened songs <Link href="/music" blank={false}>here</Link>
+        </Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          All my books{" "}
+          <Link href="/books" blank={false}>here</Link>
         </Text>
       </Bubble>
     </BubbleContainer>
@@ -110,7 +86,9 @@ if (data.currently_playing_type === "track") {
       <Bubble>
         <Text>
           Say hello on
-          <Link href="https://www.instagram.com/matteotagliatti/">Instagram</Link> or <Link href="mailto:matteotagliatti@gmail.com">email</Link>
+          <Link href="https://www.instagram.com/matteotagliatti/">
+            Instagram
+          </Link> or <Link href="mailto:matteotagliatti@gmail.com">email</Link>
         </Text>
         <p class="absolute left-0 top-[45px] text-[13px] text-neutral-500">
           Seen
