@@ -5,7 +5,13 @@ const token_endpoint = `https://accounts.spotify.com/api/token`;
 const now_playing_endpoint = `https://api.spotify.com/v1/me/player/currently-playing`;
 const top_tracks_endpoint = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=20&offset=0`;
 
-const get = (path, headers) =>
+interface Headers {
+  headers: {
+    Authorization: string;
+  };
+}
+
+const get = (path: string, headers: Headers) =>
   fetch(path, headers).then((r) =>
     r.status === 200 ? r.json() : JSON.stringify({})
   );
