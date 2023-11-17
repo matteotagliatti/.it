@@ -1,18 +1,34 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Item from "../components/Item.astro";
-import Photo from "../components/Photo.astro";
-import BubbleContainer from "../components/BubbleContainer.astro";
-import Bubble from "../components/Bubble.astro";
-import Text from "../components/Text.astro";
-import Link from "../components/Link.astro";
-
 import { getTopTracks } from "../api/spotify";
+import Bubble from "../components/Bubble.astro";
+import BubbleContainer from "../components/BubbleContainer.astro";
+import Item from "../components/Item.astro";
+import Link from "../components/Link.astro";
+import Photo from "../components/Photo.astro";
+import Text from "../components/Text.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface SpotifySong {
+  name: string;
+  artists: {
+    name: string;
+  }[];
+  external_urls: {
+    spotify: string;
+  };
+}
+
+interface Song {
+  name: string;
+  artist: string;
+  url: string;
+}
+
 const data = await getTopTracks();
-let songs = null;
+let songs: Song[] | null = null;
 
 if (data.items) {
-  songs = data.items.map((song) => {
+  songs = data.items.map((song: SpotifySong) => {
     return {
       name: song.name,
       artist: song.artists[0].name,
@@ -22,13 +38,15 @@ if (data.items) {
 }
 ---
 
-<Layout title="Music - Matteo Tagliatti">
+<Layout title="Music">
   <Item>
     <Photo />
     <BubbleContainer>
       <Bubble>
         <Text>
-          <Link href="https://open.spotify.com/user/matteotagliatti">Spotify</Link> Top Tracks
+          <Link href="https://open.spotify.com/user/matteotagliatti">
+            Spotify
+          </Link> Top Tracks
         </Text>
       </Bubble>
       {
