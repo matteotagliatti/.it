@@ -1,18 +1,20 @@
-const API_URL = "http://bklst-api.vercel.app/matteotagliatti";
+const API_URL = "https://bklst.matteotagliatti.it/api/books";
 
 const get = (path: string) =>
   fetch(path).then((r) => (r.status === 200 ? r.json() : JSON.stringify({})));
 
 const getReadingBooks = async () => {
-  return get(`${API_URL}/reading`);
+  return get(`${API_URL}?username=matteotagliatti&status=reading&limit=3`);
 };
 
 const getReadBooks = async () => {
-  return get(`${API_URL}/read`);
+  return get(
+    `${API_URL}?username=matteotagliatti&status=read&limit=10?order=finished`
+  );
 };
 
 const getToReadBooks = async () => {
-  return get(`${API_URL}/to-read`);
+  return get(`${API_URL}?username=matteotagliatti&status=to-read&limit=3`);
 };
 
 export const getBooks = async () => {
