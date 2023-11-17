@@ -1,0 +1,104 @@
+---
+import { getBooks } from "../api/books";
+import Bubble from "../components/Bubble.astro";
+import BubbleContainer from "../components/BubbleContainer.astro";
+import Item from "../components/Item.astro";
+import Link from "../components/Link.astro";
+import Photo from "../components/Photo.astro";
+import Text from "../components/Text.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface Book {
+  author: string;
+  created_at: string;
+  favorite: boolean;
+  finished: string | null;
+  id: number;
+  img: string;
+  owner: string;
+  status: string;
+  title: string;
+  updated_at: string;
+}
+
+const { reading, read, toRead } = await getBooks();
+---
+
+<Layout title="Books">
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>Reading</Text>
+      </Bubble>
+      {
+        reading.map((book: Book) => {
+          return (
+            <Bubble>
+              <Text>
+                <Link>{book.title}</Link> by {book.author}
+              </Text>
+            </Bubble>
+          );
+        })
+      }
+    </BubbleContainer>
+  </Item>
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>Read</Text>
+      </Bubble>
+      {
+        read.map((book: Book) => {
+          return (
+            <Bubble>
+              <Text>
+                <Link>{book.title}</Link> by {book.author}
+              </Text>
+            </Bubble>
+          );
+        })
+      }
+    </BubbleContainer>
+  </Item>
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>To Read</Text>
+      </Bubble>
+      {
+        toRead.map((book: Book) => {
+          return (
+            <Bubble>
+              <Text>
+                <Link>{book.title}</Link> by {book.author}
+              </Text>
+            </Bubble>
+          );
+        })
+      }
+    </BubbleContainer>
+  </Item>
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          All my books <Link
+            href="https://bklst.matteotagliatti.it/matteotagliatti"
+          >
+            here
+          </Link>
+        </Text>
+      </Bubble>
+      <Bubble>
+        <Text>
+          Go <Link href="/" blank={false}>back</Link>
+        </Text>
+      </Bubble>
+    </BubbleContainer>
+  </Item>
+</Layout>

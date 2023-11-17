@@ -48,7 +48,8 @@ import Layout from "../layouts/Layout.astro";
       </Bubble>
       <Bubble href="https://github.com/matteotagliatti/bklst">
         <Text>
-          <Link>Music Player</Link>. Made with Astro, Tailwind, React, Spotify API and ViewTransition API
+          <Link>Music Player</Link>. Made with Astro, Tailwind, React, Spotify
+          API and ViewTransition API
         </Text>
       </Bubble>
       <Bubble href="https://github.com/matteotagliatti/kindle-clippings-parser">
@@ -75,12 +76,16 @@ import Layout from "../layouts/Layout.astro";
       </Bubble>
       <Bubble>
         <Text>
-          Reading, read and to read books <Link href="https://bklst.matteotagliatti.it/matteotagliatti">here</Link>
+          Reading, read and to read books <Link href="/books" blank={false}>
+            here
+          </Link>
         </Text>
       </Bubble>
       <Bubble>
         <Text>
-          Movie watchlist <Link href="https://letterboxd.com/matteotagliatti/">here</Link>
+          Movie watchlist <Link href="https://letterboxd.com/matteotagliatti/">
+            here
+          </Link>
         </Text>
       </Bubble>
     </BubbleContainer>
