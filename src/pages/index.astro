@@ -41,26 +41,34 @@ import Layout from "../layouts/Layout.astro";
       <Bubble>
         <Text>GitHub</Text>
       </Bubble>
-      <Bubble href="https://github.com/matteotagliatti/bklst">
+      <Bubble>
         <Text>
-          <Link>bklst</Link>. A simple book tracker
+          <Link href="https://github.com/matteotagliatti/bklst">bklst</Link>. A
+          simple book tracker
         </Text>
       </Bubble>
-      <Bubble href="https://github.com/matteotagliatti/bklst">
+      <Bubble>
         <Text>
-          <Link>Music Player</Link>. Made with Astro, Tailwind, React, Spotify
-          API and ViewTransition API
+          <Link href="https://github.com/matteotagliatti/astro-music-player">
+            Music Player
+          </Link>. Made with Astro, Tailwind, React, Spotify API and
+          ViewTransition API
         </Text>
       </Bubble>
-      <Bubble href="https://github.com/matteotagliatti/kindle-clippings-parser">
+      <Bubble>
         <Text>
-          <Link>Kindle Clippings Parser</Link>. Node.js CLI tool to manage
-          Kindle clippings
+          <Link
+            href="https://github.com/matteotagliatti/kindle-clippings-parser"
+          >
+            Kindle Clippings Parser
+          </Link>. Node.js CLI tool to manage Kindle clippings
         </Text>
       </Bubble>
-      <Bubble href="https://github.com/matteotagliatti/arcade-games">
+      <Bubble>
         <Text>
-          <Link>Arcade Games</Link>. Made with Vanilla JS and Jekyll
+          <Link href="https://github.com/matteotagliatti/arcade-games">
+            Arcade Games
+          </Link>. Made with Vanilla JS and Jekyll
         </Text>
       </Bubble>
     </BubbleContainer>
@@ -69,19 +77,21 @@ import Layout from "../layouts/Layout.astro";
   <Item>
     <Photo />
     <BubbleContainer>
-      <Bubble href="/music" blank={false}>
+      <Bubble>
         <Text>
-          My most listened <Link>songs</Link>
+          My most listened <Link href="/music" blank={false}>songs</Link>
         </Text>
       </Bubble>
-      <Bubble href="/books" blank={false}>
+      <Bubble>
         <Text>
-          Reading, read and to read <Link>books</Link>
+          Reading, read and to read <Link href="/books" blank={false}>
+            books
+          </Link>
         </Text>
       </Bubble>
-      <Bubble href="https://letterboxd.com/matteotagliatti/">
+      <Bubble>
         <Text>
-          <Link>Movies</Link> watchlist
+          <Link href="https://letterboxd.com/matteotagliatti/">Movies</Link> watchlist
         </Text>
       </Bubble>
     </BubbleContainer>
@@ -92,10 +102,9 @@ import Layout from "../layouts/Layout.astro";
     <BubbleContainer>
       <Bubble>
         <Text>
-          Say hello on
-          <Link href="https://www.instagram.com/matteotagliatti/">
-            Instagram
-          </Link> or <Link href="mailto:matteotagliatti@gmail.com">email</Link>
+          Say hello via <Link href="mailto:matteotagliatti@gmail.com">
+            mail
+          </Link>
         </Text>
         <p class="absolute left-0 top-[45px] text-[13px] text-neutral-500">
           Seen

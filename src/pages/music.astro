@@ -43,23 +43,31 @@ if (data.items) {
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>
-          <Link href="https://open.spotify.com/user/matteotagliatti">
-            Spotify
-          </Link> Top Tracks
-        </Text>
+        <Text>Top Tracks</Text>
       </Bubble>
       {
         songs.map((song) => {
           return (
-            <Bubble href={song.url}>
+            <Bubble>
               <Text>
-                <Link>{song.name}</Link> by {song.artist}
+                <Link href={song.url}>{song.name}</Link> by {song.artist}
               </Text>
             </Bubble>
           );
         })
       }
+    </BubbleContainer>
+  </Item>
+  <Item>
+    <Photo />
+    <BubbleContainer>
+      <Bubble>
+        <Text>
+          My <Link href="https://open.spotify.com/user/matteotagliatti">
+            Spotify
+          </Link> profile
+        </Text>
+      </Bubble>
       <Bubble>
         <Text>
           Go <Link href="/" blank={false}>back</Link>
