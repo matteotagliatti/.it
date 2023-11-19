@@ -69,21 +69,19 @@ import Layout from "../layouts/Layout.astro";
   <Item>
     <Photo />
     <BubbleContainer>
-      <Bubble>
+      <Bubble href="/music" blank={false}>
         <Text>
-          My most listened <Link href="/music" blank={false}>songs</Link>
+          My most listened <Link>songs</Link>
         </Text>
       </Bubble>
-      <Bubble>
+      <Bubble href="/books" blank={false}>
         <Text>
-          Reading, read and to read <Link href="/books" blank={false}>
-            books
-          </Link>
+          Reading, read and to read <Link>books</Link>
         </Text>
       </Bubble>
-      <Bubble>
+      <Bubble href="https://letterboxd.com/matteotagliatti/">
         <Text>
-          <Link href="https://letterboxd.com/matteotagliatti/">Movies</Link> watchlist
+          <Link>Movies</Link> watchlist
         </Text>
       </Bubble>
     </BubbleContainer>
