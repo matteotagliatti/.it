@@ -10,7 +10,12 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<style is:global>
+  a {
+    color: white;
+  }
+</style>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,7 +27,7 @@ const { title } = Astro.props;
     <meta property="og:image" content="/share.jpg" />
     <ViewTransitions fallback="swap" />
   </head>
-  <body class="min-height-100 bg-background px-4 py-32 text-[15px]">
+  <body class="min-height-100 bg-background px-4 py-32 text-[15px] text-para">
     <Overlay>
       <main class="w-full flex flex-col gap-10 mx-auto max-w-md">
         <slot />

@@ -5,7 +5,6 @@ import BubbleContainer from "../components/BubbleContainer.astro";
 import Item from "../components/Item.astro";
 import Link from "../components/Link.astro";
 import Photo from "../components/Photo.astro";
-import Text from "../components/Text.astro";
 import Layout from "../layouts/Layout.astro";
 
 interface SpotifySong {
@@ -43,15 +42,15 @@ if (data.items) {
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>Top Tracks</Text>
+        <p>Top Tracks</p>
       </Bubble>
       {
         songs.map((song) => {
           return (
             <Bubble>
-              <Text>
-                <Link href={song.url}>{song.name}</Link> by {song.artist}
-              </Text>
+              <p>
+                <Link href={song.url} text={song.name} /> by {song.artist}
+              </p>
             </Bubble>
           );
         })
@@ -62,16 +61,17 @@ if (data.items) {
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>
-          My <Link href="https://open.spotify.com/user/matteotagliatti">
-            Spotify
-          </Link> profile
-        </Text>
+        <p>
+          My <Link
+            href="https://open.spotify.com/user/matteotagliatti"
+            text="Spotify"
+          /> profile
+        </p>
       </Bubble>
       <Bubble>
-        <Text>
-          Go <Link href="/" blank={false}>back</Link>
-        </Text>
+        <p>
+          Go <Link href="/" blank={false} text="back" />
+        </p>
       </Bubble>
     </BubbleContainer>
   </Item>

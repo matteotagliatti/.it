@@ -4,7 +4,6 @@ import BubbleContainer from "../components/BubbleContainer.astro";
 import Item from "../components/Item.astro";
 import Link from "../components/Link.astro";
 import Photo from "../components/Photo.astro";
-import Text from "../components/Text.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -14,23 +13,25 @@ import Layout from "../layouts/Layout.astro";
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>
+        <p>
           Hey I'm Matteo! A web developer and designer based in Milan, Italy
-        </Text>
+        </p>
       </Bubble>
       <Bubble>
-        <Text>
+        <p>
           Currently working as leader frontend developer and designer at
-          <Link href="https://www.linkedin.com/in/matteotagliatti/">TI3</Link>,
-          creating industry software.
-        </Text>
+          <Link
+            href="https://www.linkedin.com/in/matteotagliatti/"
+            text="TI3"
+          />, creating industry software.
+        </p>
       </Bubble>
       <Bubble>
-        <Text>
+        <p>
           Experiment on my own in my
-          <Link href="https://github.com/matteotagliatti">GitHub</Link>. I also
-          love reading, lifting weights, music, cooking and traveling
-        </Text>
+          <Link href="https://github.com/matteotagliatti" text="GitHub" />. I
+          also love reading, lifting weights, music, cooking and traveling
+        </p>
       </Bubble>
     </BubbleContainer>
   </Item>
@@ -39,28 +40,30 @@ import Layout from "../layouts/Layout.astro";
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>GitHub</Text>
+        <p>GitHub</p>
       </Bubble>
       <Bubble>
-        <Text>
-          <Link href="https://github.com/matteotagliatti/bklst">bklst.</Link> A simple
-          book tracker
-        </Text>
+        <p>
+          <Link href="https://github.com/matteotagliatti/bklst" text="bklst" />.
+          A simple book tracker
+        </p>
       </Bubble>
       <Bubble>
-        <Text>
-          <Link href="https://github.com/matteotagliatti/astro-music-player">
-            Music Player.
-          </Link> Made with Astro, Tailwind, React, Spotify API and ViewTransition
+        <p>
+          <Link
+            href="https://github.com/matteotagliatti/astro-music-player"
+            text="Music Player"
+          />. Made with Astro, Tailwind, React, Spotify API and ViewTransition
           API
-        </Text>
+        </p>
       </Bubble>
       <Bubble>
-        <Text>
-          <Link href="https://github.com/matteotagliatti/arcade-games">
-            Arcade Games.
-          </Link> Made with Vanilla JS and Jekyll
-        </Text>
+        <p>
+          <Link
+            href="https://github.com/matteotagliatti/astro-music-player"
+            text="Arcade Games"
+          />. Made with Jekyll and Vanilla JavaScript.
+        </p>
       </Bubble>
     </BubbleContainer>
   </Item>
@@ -69,21 +72,23 @@ import Layout from "../layouts/Layout.astro";
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>
-          My most listened <Link href="/music" blank={false}>songs</Link>
-        </Text>
+        <p>
+          My most listened <Link href="/music" blank={false} text="songs" />
+        </p>
       </Bubble>
       <Bubble>
-        <Text>
-          Reading, read and to read <Link href="/books" blank={false}>
-            books
-          </Link>
-        </Text>
+        <p>
+          Reading, read and to read <Link
+            href="/books"
+            blank={false}
+            text="books"
+          />
+        </p>
       </Bubble>
       <Bubble>
-        <Text>
-          <Link href="https://letterboxd.com/matteotagliatti/">Movies</Link> watchlist
-        </Text>
+        <p>
+          <Link href="https://letterboxd.com/matteotagliatti/" text="Movies" /> watchlist
+        </p>
       </Bubble>
     </BubbleContainer>
   </Item>
@@ -92,11 +97,12 @@ import Layout from "../layouts/Layout.astro";
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <Text>
-          Say hello via <Link href="mailto:matteotagliatti@gmail.com">
-            mail
-          </Link>
-        </Text>
+        <p>
+          Say hello via <Link
+            href="mailto:matteotagliatti@gmail.com"
+            text="mail"
+          />
+        </p>
         <p class="absolute left-0 top-[45px] text-[13px] text-neutral-500">
           Seen
         </p>
