@@ -9,7 +9,7 @@ const getReadingBooks = async () => {
 
 const getReadBooks = async () => {
   return get(
-    `${API_URL}?username=matteotagliatti&status=read&limit=10?order=finished`
+    `${API_URL}?username=matteotagliatti&status=read&limit=10&order=finished`
   );
 };
 
