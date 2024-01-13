@@ -7,7 +7,7 @@ import Photo from "../../components/Photo.astro";
 import Layout from "../../layouts/Layout.astro";
 import type { Frontmatter } from "../../types.ts";
 
-const highlights = await Astro.glob<Frontmatter>("../../highlights/*.md");
+const highlights = await Astro.glob<Frontmatter>("../../highlights/*.mdx");
 ---
 
 <Layout title="Highlights">
