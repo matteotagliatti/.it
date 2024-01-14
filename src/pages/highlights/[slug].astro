@@ -32,13 +32,22 @@ const { Content } = Astro.props.highlight;
     <Photo />
     <BubbleContainer>
       <Bubble>
-        <p class="font-medium text-white">{highlight.frontmatter.titolo}</p>
+        {
+          highlight.frontmatter.url ? (
+            <p>
+              <Link
+                href={highlight.frontmatter.url}
+                blank={true}
+                text={highlight.frontmatter.titolo}
+              />
+            </p>
+          ) : (
+            <p class="font-medium text-white">{highlight.frontmatter.titolo}</p>
+          )
+        }
       </Bubble>
       <Bubble>
-        <p>{highlight.frontmatter.autore}</p>
-      </Bubble>
-      <Bubble>
-        <p>{highlight.frontmatter.anno}</p>
+        <p>{highlight.frontmatter.autore}, {highlight.frontmatter.anno}</p>
       </Bubble>
     </BubbleContainer>
   </Item>

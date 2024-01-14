@@ -31,8 +31,7 @@ const highlights = await Astro.glob<Frontmatter>("../../highlights/*.mdx");
                       .replace(/\s/g, "-")}`}
                     text={highlight.frontmatter.titolo}
                     blank={false}
-                  />{" "}
-                  by {highlight.frontmatter.autore}
+                  />, {highlight.frontmatter.autore}
                 </p>
               </Bubble>
             );
@@ -60,8 +59,8 @@ const highlights = await Astro.glob<Frontmatter>("../../highlights/*.mdx");
                       .replace(/\s/g, "-")}`}
                     text={highlight.frontmatter.titolo}
                     blank={false}
-                  />{" "}
-                  by {highlight.frontmatter.autore}
+                  />
+                  , {highlight.frontmatter.autore}
                 </p>
               </Bubble>
             );
