@@ -1,13 +1,12 @@
 ---
+import { getCollection } from "astro:content";
 import Bubble from "../../components/Bubble.astro";
 import BubbleContainer from "../../components/BubbleContainer.astro";
 import Item from "../../components/Item.astro";
 import Link from "../../components/Link.astro";
 import Photo from "../../components/Photo.astro";
 import Layout from "../../layouts/Layout.astro";
-import type { Frontmatter } from "../../types.ts";
-
-const highlights = await Astro.glob<Frontmatter>("../../highlights/*.mdx");
+const highlights = await getCollection("highlights");
 ---
 
 <Layout title="Highlights">
@@ -19,19 +18,20 @@ const highlights = await Astro.glob<Frontmatter>("../../highlights/*.mdx");
       </Bubble>
       {
         highlights
-          .filter((highlight) => highlight.frontmatter.tipologia === "libri")
-          .sort((a, b) => b.frontmatter.anno - a.frontmatter.anno)
+          .filter((highlight) => highlight.data.tipologia === "libri")
+          .sort((a, b) => b.data.anno - a.data.anno)
           .map((highlight) => {
             return (
               <Bubble>
                 <p>
                   <Link
-                    href={`/highlights/${highlight.frontmatter.titolo
+                    href={`/highlights/${highlight.data.titolo
                       .toLowerCase()
                       .replace(/\s/g, "-")}`}
-                    text={highlight.frontmatter.titolo}
+                    text={highlight.data.titolo}
                     blank={false}
-                  />, {highlight.frontmatter.autore}
+                  />{" "}
+                  by {highlight.data.autore}
                 </p>
               </Bubble>
             );
@@ -47,20 +47,20 @@ const highlights = await Astro.glob<Frontmatter>("../../highlights/*.mdx");
       </Bubble>
       {
         highlights
-          .filter((highlight) => highlight.frontmatter.tipologia === "articoli")
-          .sort((a, b) => b.frontmatter.anno - a.frontmatter.anno)
+          .filter((highlight) => highlight.data.tipologia === "articoli")
+          .sort((a, b) => b.data.anno - a.data.anno)
           .map((highlight) => {
             return (
               <Bubble>
                 <p>
                   <Link
-                    href={`/highlights/${highlight.frontmatter.titolo
+                    href={`/highlights/${highlight.data.titolo
                       .toLowerCase()
                       .replace(/\s/g, "-")}`}
-                    text={highlight.frontmatter.titolo}
+                    text={highlight.data.titolo}
                     blank={false}
-                  />
-                  , {highlight.frontmatter.autore}
+                  />{" "}
+                  by {highlight.data.autore}
                 </p>
               </Bubble>
             );

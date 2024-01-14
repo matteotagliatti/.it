@@ -1,20 +1,20 @@
 ---
 import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
 import Bubble from "../../components/Bubble.astro";
 import BubbleContainer from "../../components/BubbleContainer.astro";
 import Item from "../../components/Item.astro";
 import Link from "../../components/Link.astro";
 import Photo from "../../components/Photo.astro";
 import Layout from "../../layouts/Layout.astro";
-import type { Frontmatter } from "../../types";
 
 export const getStaticPaths = (async () => {
-  const highlights = await Astro.glob<Frontmatter>("../../highlights/*.mdx");
+  const highlights = await getCollection("highlights");
 
   return highlights.map((highlight) => {
     return {
       params: {
-        slug: highlight.frontmatter.titolo.toLowerCase().replace(/\s/g, "-"),
+        slug: highlight.data.titolo.toLowerCase().replace(/\s/g, "-"),
       },
       props: {
         highlight,
@@ -24,37 +24,44 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { highlight } = Astro.props;
-const { Content } = Astro.props.highlight;
+const paragraphs = highlight.body.split("\n");
+const paragraphsFiltered = paragraphs.filter((paragraph) => paragraph !== "");
 ---
 
-<Layout title={highlight.frontmatter.titolo}>
+<Layout title={highlight.data.titolo}>
   <Item>
     <Photo />
     <BubbleContainer>
       <Bubble>
         {
-          highlight.frontmatter.url ? (
+          highlight.data.url ? (
             <p>
               <Link
-                href={highlight.frontmatter.url}
+                href={highlight.data.url}
                 blank={true}
-                text={highlight.frontmatter.titolo}
+                text={highlight.data.titolo}
               />
             </p>
           ) : (
-            <p class="font-medium text-white">{highlight.frontmatter.titolo}</p>
+            <p class="font-medium text-white">{highlight.data.titolo}</p>
           )
         }
       </Bubble>
       <Bubble>
-        <p>{highlight.frontmatter.autore}, {highlight.frontmatter.anno}</p>
+        <p>{highlight.data.autore}, {highlight.data.anno}</p>
       </Bubble>
     </BubbleContainer>
   </Item>
   <Item>
     <Photo />
     <BubbleContainer>
-      <Content components={{ p: Bubble }} />
+      {
+        paragraphsFiltered.map((paragraph) => (
+          <Bubble>
+            <p>{paragraph}</p>
+          </Bubble>
+        ))
+      }
     </BubbleContainer>
   </Item>
   <Item>
