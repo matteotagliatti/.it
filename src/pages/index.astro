@@ -92,15 +92,12 @@ import Layout from "../layouts/Layout.astro";
   <Item>
     <Photo />
     <BubbleContainer>
-      <Bubble>
+      <Bubble seen={true}>
         <p>
           Say hello via <Link
             href="mailto:matteotagliatti@gmail.com"
             text="mail"
           />
-        </p>
-        <p class="absolute left-0 top-[45px] text-[13px] text-neutral-500">
-          Seen
         </p>
       </Bubble>
     </BubbleContainer>
