@@ -11,6 +11,15 @@ const highlightsCollection = defineCollection({
   }),
 });
 
+const notesCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    titolo: z.string(),
+    data: z.string(),
+  }),
+});
+
 export const collections = {
   highlights: highlightsCollection,
+  notes: notesCollection,
 };
