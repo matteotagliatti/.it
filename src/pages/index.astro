@@ -63,14 +63,6 @@ import Layout from "../layouts/Layout.astro";
           />. React app with a drumpad to play drums
         </p>
       </Bubble>
-      <Bubble>
-        <p>
-          <Link
-            href="https://github.com/matteotagliatti/arcade-games"
-            text="Arcade Games"
-          />. Made with Jekyll and Vanilla JavaScript
-        </p>
-      </Bubble>
     </BubbleContainer>
   </Item>
   <Item>
@@ -78,32 +70,24 @@ import Layout from "../layouts/Layout.astro";
     <BubbleContainer>
       <Bubble>
         <p>
-          My most listened <Link href="/music" blank={false} text="songs" /> right
-          now
-        </p>
-      </Bubble>
-      <Bubble>
-        <p>
-          Reading, read and to read <Link
+          What I <Link href="/music" blank={false} text="listen" />, <Link
             href="/books"
             blank={false}
-            text="books"
+            text="read"
+          /> and <Link
+            href="https://letterboxd.com/matteotagliatti/"
+            text="watch"
           />
         </p>
       </Bubble>
-    </BubbleContainer>
-  </Item>
-  <Item>
-    <Photo />
-    <BubbleContainer>
       <Bubble seen={true}>
         <p>
-          Say hello on <Link
+          Say hi on <Link
             href="https://twitter.com/matteotagliatti"
-            text="Twitter"
+            text="twitter"
           />, <Link
             href="https://www.instagram.com/matteotagliatti/"
-            text="Instagram"
+            text="instagram"
           /> or via <Link
             href="mailto:matteotagliatti@gmail.com"
             text="email"
